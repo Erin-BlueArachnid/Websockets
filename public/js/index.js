@@ -10,9 +10,14 @@ socket.on('disconnect', () => {
 
 socket.on('newMessage', message => {
    console.log('New Message', message);
-   var li = $('<li></li>');
-   li.text(`${message.from}: ${message.text}`);
-   $('#messages').append(li);
+   // var li = $('<li></li>');
+   // li.text(`${message.from}: ${message.text}`);
+   // $('#messages').append(li);
+    var template = $('#message-template').html();
+    var html = Mustache.render(template, {
+        text: message.text
+    });
+    $('#messages').append(html);
 });
 
 $('#message-form').on('submit', e => {
