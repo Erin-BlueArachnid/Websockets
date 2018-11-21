@@ -1,3 +1,7 @@
+:root {
+    --form-border-radius: 20px;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
@@ -48,11 +52,10 @@ ol {
 form {
     flex: 0 0 auto;
     display: flex;
-    border-radius: 3px;
-    overflow: hidden;
     opacity: 0;
     transform: translateY(-30px);
     animation: introduce 0.3s ease-out forwards 0.4s;
+    border-radius: var(--form-border-radius);
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.3);
 }
 
@@ -61,18 +64,28 @@ form > input {
     border: none;
     outline: none;
     padding: 6px;
+    border: 1px solid transparent;
+    border-radius: var(--form-border-radius) 0 0 var(--form-border-radius);
+    transition: border-color 0.3s ease-in-out;
+}
+
+form > input:focus {
+    border-color: #0165b7;
 }
 
 form > button {
     background: #0165b7;
     color: white;
     border: none;
+    border-radius: 0 var(--form-border-radius) var(--form-border-radius) 0;
     padding: 6px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
     text-transform: uppercase;
+    outline: none;
 }
-form > button:hover {
+form > button:hover,
+form > button:focus {
     background: #209afe;
 }
 

@@ -41,7 +41,7 @@ $('#message-form').on('submit', e => {
         from: 'user',
         text: $('input[name=message]').val()
     }, () => {
-
+        $('input[name="message"]').val('');
     });
 });
 
