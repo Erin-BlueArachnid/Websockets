@@ -12,3 +12,10 @@ socket.on('newMessage', message => {
    console.log('New Message', message);
 });
 
+// socket.on('notifyUsersOfNewUser', () => {
+//     console.log('A new user has joined!')
+// });
+//
+// socket.on('welcomingUserByAdmin', () => {
+//     console.log('Welcome user!')
+// });
