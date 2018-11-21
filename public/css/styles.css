@@ -52,7 +52,7 @@ form {
     overflow: hidden;
     opacity: 0;
     transform: translateY(-30px);
-    animation: introduce 0.3s ease-out forwards 0.1s;
+    animation: introduce 0.3s ease-out forwards 0.4s;
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.3);
 }
 
