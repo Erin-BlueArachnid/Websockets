@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Chat | Chatapp</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card-face card-face__front">
+      <h1>Erin's chat app</h1>
+      <h2>with websockets</h2>
+      <span class="toggle-view-users">show users</span>
+      <ol id="messages"></ol>
+      <form action="" id="message-form">
+        <input type="text" name="message" placeholder="Type your message here...">
+        <button>Send</button>
+      </form>
+      <!--<button id="send-location">Send location</button>-->
+      <script id="message-template" type="text/template">
+        <li>{{name}}: {{text}}</li>
+      </script>
+    </div>
+    <div class="card-face card-face__back">
+      <h1>Erin's chat app</h1>
+      <h2>with websockets</h2>
+      <span class="toggle-view-users">hide users</span>
+      <div id="users"></div>
+    </div>
+  </div>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/libs/jquery-3.3.1.min.js"></script>
+  <script src="/libs/mustache.js"></script>
+  <script src="/libs/deparam.js"></script>
+  <script src="/js/chat.js"></script>
+</body>
+</html>
