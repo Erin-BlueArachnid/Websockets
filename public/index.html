@@ -10,25 +10,32 @@
 
 <body>
 
-<h1>Erin's chat app</h1>
-<h2>with websockets</h2>
-
-<form action="/chat.html" id="login">
-    <div class="formfield">
-        <h3>Join a chat</h3>
+<div class="card">
+    <div class="card-face">
+        <h1>Erin's chat app</h1>
+        <h2>with websockets</h2>
+        <form action="/chat.html" id="login">
+            <div class="formfield">
+                <h3>Join a chat</h3>
+            </div>
+            <div class="formfield">
+                <label>Display name</label>
+                <input type="text" name="name" autofocus>
+            </div>
+            <div class="formfield">
+                <label>Room name</label>
+                <!--<input type="text" name="room">-->
+                <select name="room" id="">
+                    <option value="room+1">Room 1</option>
+                    <option value="room+2">Room 2</option>
+                </select>
+            </div>
+            <div class="formfield">
+                <button>Join chatroom</button>
+            </div>
+        </form>
     </div>
-    <div class="formfield">
-        <label>Display name</label>
-        <input type="text" name="name" autofocus>
-    </div>
-    <div class="formfield">
-        <label>Room name</label>
-        <input type="text" name="room">
-    </div>
-    <div class="formfield">
-        <button>Join chatroom</button>
-    </div>
-</form>
+</div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/libs/jquery-3.3.1.min.js"></script>

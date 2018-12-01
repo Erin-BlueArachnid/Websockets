@@ -53,7 +53,8 @@ form {
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.3);
 }
 
-form input {
+input,
+select {
     flex: 1 1 auto;
     border: none;
     outline: none;
@@ -61,9 +62,21 @@ form input {
     border: 1px solid transparent;
     border-radius: var(--form-border-radius) 0 0 var(--form-border-radius);
     transition: border-color 0.3s ease-in-out;
+    -webkit-appearance: none;
+    background-color: #fff;
+    position: relative;
 }
 
-form > input:focus {
+select:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #0165b7;
+}
+
+input:focus {
     border-color: #0165b7;
 }
 
@@ -94,17 +107,34 @@ form > button:focus {
     box-shadow: none;
 }
 
+.formfield {
+    display: flex;
+    flex-direction: column;
+}
+
 .formfield > label {
     display: flex;
     flex-direction: column;
 }
 
-.formfield input {
-    border: 0;
-    border-bottom: 1px solid rgba(0,0,0,0.3);
-    border-radius: 0;
-    padding: 0;
-    margin: 16px 0;
+.formfield input,
+.formfield select {
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+    margin: 8px 0 16px;
+}
+
+.formfield input:focus,
+.formfield select:focus {
+    border-color: #0165b7;
+}
+
+.formfield select {
+
+}
+
+.formfield option {
+
 }
 
 .formfield button {
