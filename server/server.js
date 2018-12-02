@@ -20,7 +20,10 @@ app.use(express.static(publicPath));
 io.on('connection', socket => {
   console.log('new user connected');
   socket.on('join', function (params, callback) {
-    if (!isRealString(params.name) && !isRealString(params.room)) {
+    console.log('name: ', !isRealString(params.name));
+    console.log('room: ', !isRealString(params.room));
+    if (!isRealString(params.name) || !isRealString(params.room)) {
+      console.log('trigger callback')
       return callback('name and room name are required');
     }
 
@@ -33,7 +36,6 @@ io.on('connection', socket => {
 
     // socket.broadcast.emit('notifyUsersOfNewUser');
     socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} has joined`));
-
     // socket.leave(params.room)
     callback();
   });
